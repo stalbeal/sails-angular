@@ -1,0 +1,162 @@
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+<% if(session.admin){ %>
+<ul id="slide-out" class="side-nav fixed grey lighten-5">
+  <li class="blue">
+    <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+    <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a></li>
+    <li><a  href="/business/business/<session.businessManager.id%>">Mis Negocios</a></li>
+    <li><a  href="/store/stores/<session.businessManager.id%>">Mis Locales</a></li>
+    <li><a href="/businessmanager/show/<session.businessManager.id%>">Cuenta</a></li>
+    <li><a href="/session/destroy/">Salir</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header ">Administradores</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/admin/new">Nuevo</a></li>
+              <li><a href="/admin/">Todos</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Departamentos</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/state/new">Nuevo</a></li>
+              <li><a href="/state/">Todos</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Ciudades</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/city/new">Nueva</a></li>
+              <li><a href="/city/">Todas</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a href="#" class="collapsible-header">Categorías</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/category/new">Nueva</a></li>
+              <li><a href="/category/">Ver todas</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Especies</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/species/new">Nueva</a></li>
+              <li><a href="/species/">Todas</a></li>
+              
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Raza</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/race/new">Nueva</a></li>
+              <li><a href="/race/">Todas</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Registros</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/homepage/">Contactos</a></li>
+              <li><a href="/user/">Usuarios</a></li>
+              <li><a href="/pet/">Mascotas</a></li>
+              <li><a href="/business/">Negocios</a></li>
+              <li><a href="/store/">Locales</a></li>
+              <li><a href="/businessmanager/">Administradores de Negocios</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Email</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/email/edit/">Editar</a></li>
+              <li><a href="/email/show/">Ver</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li><a href="/session/destroy/">Salir</a></li>
+    
+  </ul>
+  <ul class="right hide-on-med-and-down">
+    <li class="blue">
+      <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+      <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a></li>
+      <li><a  href="/business/business/<session.businessManager.id%>">Mis Negocios</a></li>
+      <li><a  href="/store/stores/<session.businessManager.id%>">Mis Locales</a></li>
+      <li><a href="/businessmanager/show/<session.businessManager.id%>">Cuenta</a></li>
+      <li><a href="/session/destroy/">Salir</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">First</a></li>
+        <li><a href="#!">Second</a></li>
+        <li><a href="#!">Third</a></li>
+        <li><a href="#!">Fourth</a></li>
+      </ul>
+    </ul>
+    <%}%>
+    <% if(session.businessManager!=undefined){ %>
+    <ul id="slide-out" class="side-nav fixed">
+      <li class="blue">
+        <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+        <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a></li>
+        <li><a  href="/business/business/<session.businessManager.id%>">Mis Negocios</a></li>
+        <li><a  href="/store/stores/<session.businessManager.id%>">Mis Locales</a></li>
+        <li><a href="/businessmanager/show/<session.businessManager.id%>">Cuenta</a></li>
+        <li><a href="/session/destroy/">Salir</a></li>
+        
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li class="blue">
+          <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+          <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a></li>
+          <li><a  href="/business/business/<session.businessManager.id%>">Mis Negocios</a></li>
+          <li><a  href="/store/stores/<session.businessManager.id%>">Mis Locales</a></li>
+          <li><a href="/businessmanager/show/<session.businessManager.id%>">Cuenta</a></li>
+          <li><a href="/session/destroy/">Salir</a></li>
+          
+        </ul>
+        
+        <%}%>

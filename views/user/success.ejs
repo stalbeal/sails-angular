@@ -1,0 +1,26 @@
+<% if(flash && flash.err) { %>
+<% var m=JSON.stringify(flash.err) %>
+<input type="hidden" id="message" value="<%=m%>">
+<% } %>
+
+
+<div id="index-banner" class="col s12 l8 parallax-container" style="height:500px;">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <div class="row ">
+                <div class="center">
+                    <img class="responsive-img center" width="200" src="/images/titlewhite.png">
+                    
+                    <h1 class="  white-text" style="text-shadow: black 0.1em 0.1em 0.2em;">!Tu contraseña ha sido cambiada exitosamente!</h1>
+                </div>
+               
+            </div>
+          
+            <br><br>
+        </div>
+    </div>
+    <div class="parallax  ">
+        <img class="responsive-img" src="/images/landing/fondo.jpg" alt="Unsplashed background img 1">
+    </div>
+</div>

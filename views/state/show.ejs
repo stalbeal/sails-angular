@@ -1,0 +1,40 @@
+<div class="row clearfix">
+	<div class="col-md-9 col-md-offset-2">
+		
+		<div class="contact-form">
+			<legend >Departamento</legend>
+			<!-- <div class="status alert alert-success" ></div>-->
+			
+				
+				<div class="row">
+					
+					<div class="col-xs-1">
+						<label  >Nombre</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-10">
+						<p><%=state.name%></p>
+					</div>
+				</div>
+				
+				<!-- <div class="row">
+					<div class="col-xs-4">
+						<label >Descripción</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-10">
+					<textarea type="text" style="border:0; background: white;" name="description" class="form-control"  rows="5" disabled="disabled"><%=state.description%></textarea>
+					</div>
+				</div> -->
+				
+				
+				<div class="row">
+					<div class="form-group col-xs-10">
+						<a href="/state/edit/<%=state.id%>" class="btn btn-primary pull-right "><i class="material-icons left">edit</i>Editar</a>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>

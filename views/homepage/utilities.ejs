@@ -1,0 +1,25 @@
+  <div class="">
+        <div class="col s12 m12 l12">
+          <div class="card ">
+            <div class="card-content  ">
+           
+              <span class="card-title black-text">Registros de mascotas sin usuario </span>
+               <%if(errors!=null){%>
+               <%_.each(errors, function(error) { %>
+              <label>Id de la mascota</label>
+              <p><%=error.petId%></p>
+              <label>Id del usuario</label>
+              <p><%=error.userId%></p>
+              <label>Nombre de la mascota</label>
+              <p><%=error.petName%></p>
+              <%});%>
+              <%}else{%>
+              <p>No existe ningún registro sin usuario</p>
+              <%}%>
+            </div>
+            <div class="card-action">
+             
+            </div>
+          </div>
+        </div>
+      </div>

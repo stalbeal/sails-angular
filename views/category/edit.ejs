@@ -1,0 +1,33 @@
+<div class="row">
+	<p class="heading h1">Editar Categoría</p>
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/category/update/<%=category.id%>">
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="name" name="name" type="text" value="<%=category.name%>" class="validate" required>
+				<label for="name">Nombre</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<textarea id="description" name="description"  class="materialize-textarea" ><%=category.description%></textarea>
+				<label for="description">Descripción</label>
+			</div>
+		</div>
+		
+		
+		
+		<div class="row">
+			<div class="input-field col s10">
+				<button  type="submit" name="submit" class="btn waves-effect waves-light right red darken-2" >Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,73 @@
+<div class="row">
+	<p class="heading h1">Información para envío de emails</p>
+	
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	<div class="card-panel teal  blue lighten-5">
+		
+		
+		<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/email/update">
+			<div class="col s9 offset-s1">
+			<br>
+				<div class="row">
+					<div class="input-field col s6">
+					<i class="material-icons prefix">email</i>
+						<input type="text" name="emailFrom"  class="form-control" value="<%=email.emailFrom%>" required="required" >
+						<label for="emailFrom">Email</label>
+					</div>
+					<div class="input-field col s6 ">
+					<i class="material-icons prefix">vpn_key</i>
+						<input type="password" name="password" class="form-control" value="<%=email.password%>" >
+						<label for="password">Contraseña</label>
+					</div>
+				</div>
+				
+				
+				
+				
+				<legend >Contenido del email a enviar</legend>
+				<div class="divider red darken-2"></div>
+				<div class="section">
+				
+				<div class="row">
+					<div class="input-field ">
+
+					<i class="material-icons prefix ">person_pin</i>
+
+						<input type="text" name="from" class="form-control" value="<%=email.from%>" required="required" >
+						<label for="from">De </label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="input-field ">
+					 <i class="material-icons prefix ">subject</i>
+						<input type="text" name="subject" class="form-control" value="<%=email.subject%>" required="required" >
+						<label for="subject">Asunto </label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="input-field ">
+					<i class="material-icons prefix">message</i>
+						<textarea type="text" name="body" class="materialize-textarea" required="required" rows="6"><%=email.body%></textarea>
+						<label for="body">Contenido</label>
+					</div>
+				</div>
+				
+				
+				<div class="row">
+					<div class="input-field col s10 offset-s2 ">
+						<button  type="submit" name="submit" class="btn waves-effect waves-light right red darken-2" >Guardar</button>
+					</div>
+				</div>
+
+				</div><!--end section-->
+				</div>
+			</form>
+		
+	</div>
+	</div>

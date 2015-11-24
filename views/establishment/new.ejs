@@ -1,0 +1,69 @@
+<div class="container">
+	<!-- Page Layout here -->
+	<div class="row">
+		
+		<% if(flash && flash.err) { %>
+		
+		<% var m=JSON.stringify(flash.err) %>
+		<input type="hidden" id="message" value="<%=m%>">
+		
+		<% } %>
+		
+		
+		<h5 class="">Nueva universidad</h5>
+		<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/establishment/create">
+			
+			<div class="input-field col s12  ">
+				<input id="name" name="name" type="text" class="validate" required>
+				<label for="name">Nombre de la universidad</label>
+			</div>
+			<div class="input-field col s12  ">
+				<input id="address" name="address" type="text" class="validate" >
+				<label for="address">Dirección</label>
+			</div>
+			<div class="input-field col s12  ">
+				<input id="neighborhood" name="neighborhood" type="text" class="validate" required>
+				<label for="neighborhood">Barrio</label>
+				
+			</div>
+			<div class="input-field col s12  ">
+				<input id="lat" name="lat" type="text" class="validate" required>
+				<label for="lat">Latitud</label>
+				
+			</div>
+			<div class="input-field col s12  ">
+				<input id="lng" name="lng" type="text" class="validate" required>
+				<label for="lng">Longitud</label>
+			</div>
+			<div class="input-field col s12  ">
+				<select name="country">
+					<%_.each(countries, function(country) { %>
+					<option value="<%=country.id%>"><%=country.name%></option>
+					<%});%>
+				</select>
+				<label>País</label>
+			</div>
+			<div class="input-field col s12  ">
+				<select name="state">
+					<%_.each(states, function(state) { %>
+					<option value="<%=state.id%>"><%=state.name%></option>
+					<%});%>
+				</select>
+				<label>Departamento</label>
+			</div>
+			<div class="input-field col s12  ">
+				<select name="city">
+					<%_.each(cities, function(city) { %>
+					<option value="<%=city.id%>"><%=city.name%></option>
+					<%});%>
+				</select>
+				<label>Ciudad</label>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<button  type="submit" name="submit" class="btn waves-effect waves-light right red darken-2" >Guardar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

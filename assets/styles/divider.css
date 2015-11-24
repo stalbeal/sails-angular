@@ -1,0 +1,277 @@
+Skip to content
+This repository  
+Pull requests
+Issues
+Gist
+ @stalbeal
+ Watch 1,008
+  Star 19,594
+  Fork 2,179
+Semantic-Org/Semantic-UI
+Branch: master  Semantic-UI/dist/components/dividerd.css
+@jlukicjlukic 10 days ago Update rlsnotes, rebuild
+1 contributor
+RawBlameHistory    Executable File  262 lines (226 sloc)  7.808 kB
+/*!
+ * # Semantic UI 2.0.8 - dividerd
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            dividerd
+*******************************/
+
+.ui.dividerd {
+  margin: 1rem 0rem;
+  line-height: 1;
+  height: 0em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.85);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*--------------
+      Basic
+---------------*/
+
+.ui.dividerd:not(.vertical):not(.horizontal) {
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/*--------------
+    Coupling
+---------------*/
+
+.ui.grid > .ui.dividerd {
+  font-size: 1rem;
+}
+
+/*--------------
+   Horizontal
+---------------*/
+
+.ui.horizontal.dividerd {
+  display: table;
+  white-space: nowrap;
+  height: auto;
+  margin: '';
+  overflow: hidden;
+  line-height: 1;
+  text-align: center;
+}
+.ui.horizontal.dividerd:before,
+.ui.horizontal.dividerd:after {
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 50%;
+  width: 50%;
+  background-repeat: no-repeat;
+}
+.ui.horizontal.dividerd:before {
+  background-position: right 1em top 50%;
+}
+.ui.horizontal.dividerd:after {
+  background-position: left 1em top 50%;
+}
+
+/*--------------
+    Vertical
+---------------*/
+
+.ui.vertical.dividerd {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  margin: 0rem;
+  padding: 0em;
+  width: auto;
+  height: 90px;
+  line-height: 0em;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.ui.vertical.dividerd:before,
+.ui.vertical.dividerd:after {
+  position: absolute;
+  left: 50%;
+  content: '';
+  z-index: 3;
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  width: 0%;
+  height: calc(100% -  1rem );
+}
+.ui.vertical.dividerd:before {
+  top: -100%;
+}
+.ui.vertical.dividerd:after {
+  top: auto;
+  bottom: 0px;
+}
+
+/* Inside grid */
+@media only screen and (max-width: 767px) {
+  .ui.stackable.grid .ui.vertical.dividerd,
+  .ui.grid .stackable.row .ui.vertical.dividerd {
+    display: table;
+    white-space: nowrap;
+    height: auto;
+    margin: '';
+    overflow: hidden;
+    line-height: 1;
+    text-align: center;
+    position: static;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  .ui.stackable.grid .ui.vertical.dividerd:before,
+  .ui.grid .stackable.row .ui.vertical.dividerd:before,
+  .ui.stackable.grid .ui.vertical.dividerd:after,
+  .ui.grid .stackable.row .ui.vertical.dividerd:after {
+    position: static;
+    left: 0;
+    border-left: none;
+    border-right: none;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    width: 50%;
+    background-repeat: no-repeat;
+  }
+  .ui.stackable.grid .ui.vertical.dividerd:before,
+  .ui.grid .stackable.row .ui.vertical.dividerd:before {
+    background-position: right 1em top 50%;
+  }
+  .ui.stackable.grid .ui.vertical.dividerd:after,
+  .ui.grid .stackable.row .ui.vertical.dividerd:after {
+    background-position: left 1em top 50%;
+  }
+}
+
+/*--------------
+      Icon
+---------------*/
+
+.ui.dividerd > .icon {
+  margin: 0rem;
+  font-size: 1rem;
+  height: 1em;
+  vertical-align: middle;
+}
+
+
+/*******************************
+          Variations
+*******************************/
+
+
+/*--------------
+    Hidden
+---------------*/
+
+.ui.hidden.dividerd {
+  border-color: transparent !important;
+}
+.ui.hidden.dividerd:before,
+.ui.hidden.dividerd:after {
+  display: none;
+}
+
+/*--------------
+    Inverted
+---------------*/
+
+.ui.dividerd.inverted,
+.ui.vertical.inverted.dividerd,
+.ui.horizontal.inverted.dividerd {
+  color: #ffffff;
+}
+.ui.dividerd.inverted,
+.ui.dividerd.inverted:after,
+.ui.dividerd.inverted:before {
+  border-top-color: rgba(34, 36, 38, 0.15) !important;
+  border-left-color: rgba(34, 36, 38, 0.15) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+  border-right-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/*--------------
+    Fitted
+---------------*/
+
+.ui.fitted.dividerd {
+  margin: 0em;
+}
+
+/*--------------
+    Clearing
+---------------*/
+
+.ui.clearing.dividerd {
+  clear: both;
+}
+
+/*--------------
+    Section
+---------------*/
+
+.ui.section.dividerd {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/*--------------
+     Sizes
+---------------*/
+
+.ui.dividerd {
+  font-size: 1rem;
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.horizontal.dividerd:before,
+.ui.horizontal.dividerd:after {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1OThBRDY4OUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1OThBRDY4QUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU5OEFENjg3Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU5OEFENjg4Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VU513gAAADVJREFUeNrs0DENACAQBDBIWLGBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC');
+}
+@media only screen and (max-width: 767px) {
+  .ui.stackable.grid .ui.vertical.dividerd:before,
+  .ui.grid .stackable.row .ui.vertical.dividerd:before,
+  .ui.stackable.grid .ui.vertical.dividerd:after,
+  .ui.grid .stackable.row .ui.vertical.dividerd:after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1OThBRDY4OUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1OThBRDY4QUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU5OEFENjg3Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU5OEFENjg4Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VU513gAAADVJREFUeNrs0DENACAQBDBIWLGBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC');
+  }
+}
+
+
+/*******************************
+         Site Overrides
+*******************************/
+
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help

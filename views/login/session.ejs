@@ -1,0 +1,74 @@
+<div class="container">
+	<div class="row" >
+		<div class="col s12 center" >
+			<img src="/images/icon/helpetblue.png"  width="250" >
+			
+			<% if(flash && flash.err) { %>
+			
+			<div class="card-panel red lighten-5 hoverable">
+				<span class="">
+					<b><%-JSON.stringify(flash.err) %></b>
+				</span>
+			</div>
+			<br>
+			<%}%>
+			
+
+		</div>
+		
+		
+		<div class="col s5 left  " >
+			<form  action="/login/admin" method="POST" >
+				<div class="">
+					<p class="center">Inicia sesión como Administrador</p>
+				</div>
+				
+				
+				<div class="input-field">
+					<input  id="user" type="text" class="validate" name="username" >
+					<label for="user">Usuario</label>
+				</div>
+				<div class="input-field">
+					<input id="psw" type="password"  class="validate" name="password" >
+					<label for="psw">Contraseña</label>
+				</div>
+				
+				<button type="submit" class="btn waves-effect waves-light right  red darken-2" >Iniciar sesión</button>
+				
+				
+			</form>
+		</div>
+		<div class="col s1 center  "  >
+			<% if(flash && !flash.err) { %>
+			<div class="ui vertical dividerd " >o</div>
+			<%}%>
+			
+		</div>
+		
+		<div class="col s5 right  " >
+			<div class="">
+				<p class="center">Inicia sesión como Usuario</p>
+			</div>
+			<form  action="/login/user" method="POST" >
+				
+				
+				<div class="input-field">
+					<input  id="user" type="text" class="validate" name="username" >
+					<label for="user">Usuario</label>
+				</div>
+				<div class="input-field">
+					<input id="psw" type="password"  class="validate" name="password" >
+					<label for="psw">Contraseña</label>
+				</div>
+				
+				<button type="submit" class="btn waves-effect waves-light right  red darken-2" >Iniciar sesión</button>
+
+				<p><a href="/user/new">¿No tienes cuenta?</a></p>
+				
+				
+			</form>
+		</div>
+		
+	</div>
+	<br>
+</div>

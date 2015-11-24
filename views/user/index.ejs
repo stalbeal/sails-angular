@@ -1,0 +1,100 @@
+<style>
+	/* generic table styling */
+	
+	/* filter-table specific styling */
+	td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+	/* special filter field styling for this example */
+	.input-filter-container { position: fixed; top: 1em; right: 1em; border: 2px solid #66f; background-color: #eef; padding: 0.5em; }
+</style>
+<script>
+$(document).ready(function() {
+	$('table').filterTable({ // apply filterTable to all tables on this page
+	inputSelector: '#input-filter'
+	});
+	$(".open-modal").click(function() {
+		//$('.modal-trigger').leanModal();
+	$('#modal1').openModal();
+	
+	});
+	$("table a").click(function() { //click anywhere in a row
+	//alert($(this).find(".appide").val());
+	//var strCat = $(this).find(".appide").val();
+	//alert(strCar);
+	//var aux=$(this).find(".appide").val();
+	//console.log("culo "+aux[0]);
+		$('#nameuser').val($(this).find(".appide").val());
+		$('#idState').val($(this).find(".appid").val());
+	});
+	
+});
+</script>
+<!-- Inicio Modal Administrador 
+<div id="modal1" class="modal " style="overflow: auto; height: 150px;">
+	
+		<div class="modal-content " style="overflow: auto; height: 150px;">
+		<form id="main-contact-form" class="col s4" name="contact-form" method="post" action="/user/destroy">
+		
+			<p>¿Esta seguro que desea eliminar esta ciudad? </p>
+			<input id="idState" name="idState" type="hidden"/>
+			<a href="#!" class=" modal-action modal-close waves-effect waves-red right btn">Cancelar</a>
+			<button  type="submit" name="submit" class="btn waves-effect waves-light right green" >Guardar</button>
+			
+					</form>
+					</div>
+	
+	
+</div>
+fin modal-->
+<div class="" ng-model="UserModel" ng-controller="getUserController">
+	<p class="heading h1">Usuarios </p>
+
+	<p class="red-text right"><b>Usuarios Registrados:</b> {{}}</p>
+	<div class="col-sm-12" style="overflow: auto;  ">
+		<row>
+		<div class="input-field col s4 right">
+			
+			
+			<input type="search" class="form-control" id="input-filter" size="10" >
+			<label for="input-filter">Buscar:</label>
+		</div>
+		</row>
+		<table id="table"   class="hoverable centered" >
+			<thead >
+				<th width="20%">Nombre</th>
+				<th width="20%">Email</th>
+				<th width="20%">Usuario</th>
+				
+				<!--<th>Sitio</th>-->
+				
+				<th width="20%" colspan="2" class="text-center">Acciones</th>
+			</thead>
+		</table>
+	</div>
+	<div class="col-sm-12" style="overflow: auto; height: 1000px;">
+		<table id="table"  class="bordered hoverable " >
+			{{var m=0}}
+			
+			<tr>
+				{{m++}}
+				<td width="20%">{{user.fullName}}</td>
+				<td width="20%">{{user.email}}</td>
+				<td width="20%">{{user.username}}</td>
+				
+				<td width="20%" colspan="4">
+					<center>
+					<a href="/user/show/{{user.id}}" class="tooltipped" data-tooltip="Ver" style="text-decoration: none; color: blue;">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+					
+					
+					<a class="open-modal tooltipped" data-tooltip="Eliminar(Toda la información relacionada a ésta se eliminará también)"  href="#" style="text-decoration: none; color: red;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+					<!-- <input class="appide"  id="input" type="hidden" value="<user.name}}" />
+					<input class="appid"  id="input" type="hidden" value="<user.id}}" /></a> -->
+					
+					</center>
+				</td>
+			</tr>
+			
+			
+		</table>
+	</div>
+</div>

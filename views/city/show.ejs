@@ -1,0 +1,37 @@
+<!-- <div class="status alert alert-success" ></div>-->
+
+
+<div class="row">
+	<div class="col s12 m4 l3 btn-group-vertical " >
+		<p class="heading h3 center">Acciones</p>
+		<a href="/city/index" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">view_list</i>Ver todos</a>
+		
+		<a href="/city/edit/<%=city.id%>" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">edit</i>Editar</a>
+		<a href="/city/destroy/<%=city.id%>" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">delete</i>Eliminar</a>
+	</div>
+	<div class="col s12 m8 l8 offset-l1" >
+		<div class="row">
+			<p class="heading h1 center">Ciudad</p>
+		</div>
+		
+		
+		<div class="">
+			<label class="lead" >Nombre</label>			
+			<p class="lead"><%=city.name%></p>
+		</div>
+		
+		
+		<div class="">
+			<label class="lead" >Latitud</label>
+			
+			<p class="lead"><%=city.latitude%></p>
+		</div>
+		
+		<div class="">
+			<label class="lead" >Longitud</label>
+			
+			<p class="lead"><%=city.longitude%></p>
+		</div>
+		
+	</div>
+</div>

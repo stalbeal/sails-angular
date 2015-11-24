@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/controllers/SessionController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">api/controllers/SessionController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">4% <small>(2 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">4% <small>(2 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">api/controllers/</a> &#187; SessionController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * SessionController
+ *
+ * @description :: Server-side logic for managing sessions
+ * @help        :: See http://links.sailsjs.org/docs/controllers
+ */
+&nbsp;
+var bcrypt = require('bcrypt');
+module.exports = {
+&nbsp;
+    login: <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >        return res.view({layout:'landing'});</span>
+    },
+    /*Verifica el login y crea la sesión de los administradores
+     */
+    loginadmin: <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >        var username = req.param('username');</span>
+<span class="cstat-no" title="statement not covered" >        var password = req.param('password');</span>
+<span class="cstat-no" title="statement not covered" >        if (!username || !password) {</span>
+            
+<span class="cstat-no" title="statement not covered" >            req.session.flash = {</span>
+                err: 'Error de validación'
+            }
+<span class="cstat-no" title="statement not covered" >            return res.redirect('/session/login');</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        Admin.findOneByUsername(username, <span class="fstat-no" title="function not covered" >function adminFound(err, adminFounded) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                return next(err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (!adminFounded) {</span>
+                
+<span class="cstat-no" title="statement not covered" >                req.session.flash = {</span>
+                    err: 'El usuario no existe'
+                }
+<span class="cstat-no" title="statement not covered" >                return res.redirect('/session/login');</span>
+            }
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            bcrypt.compare(password,adminFounded.encryptedPassword, <span class="fstat-no" title="function not covered" >function passwordsMatch(err, valid) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (err)</span>
+<span class="cstat-no" title="statement not covered" >                    return next(err);</span>
+<span class="cstat-no" title="statement not covered" >                if (!valid) {</span>
+                    
+<span class="cstat-no" title="statement not covered" >                    req.session.flash = {</span>
+                        err: 'La contraseña no coincide'
+                    }
+<span class="cstat-no" title="statement not covered" >                    return res.redirect('/session/login');</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if(req.session.businessManager!=null || req.session.businessManager!=undefined){</span>
+<span class="cstat-no" title="statement not covered" >                    req.session.businessManager=null;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                req.session.admin = adminFounded;</span>
+<span class="cstat-no" title="statement not covered" >                req.session.authenticated= true;</span>
+<span class="cstat-no" title="statement not covered" >                return res.redirect('/admin/show/'+adminFounded.id);</span>
+&nbsp;
+&nbsp;
+            });
+        });
+    },
+    /*Verifica el login y crea la sesión de los businessManager
+     */
+    loginBusinessManager: <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >        var username = req.param('username');</span>
+<span class="cstat-no" title="statement not covered" >        var password = req.param('password');</span>
+<span class="cstat-no" title="statement not covered" >        if (!username || !password) {</span>
+            
+<span class="cstat-no" title="statement not covered" >            req.session.flash = {</span>
+                err: 'Error de validación'
+            }
+<span class="cstat-no" title="statement not covered" >            return res.redirect('/session/login');</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        BusinessManager.findOneByUsername(username, <span class="fstat-no" title="function not covered" >function businessManagerFound(err, businessManagerFounded) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                return next(err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (!businessManagerFounded) {</span>
+                
+<span class="cstat-no" title="statement not covered" >                req.session.flash = {</span>
+                    err: 'El usuario no existe'
+                }
+<span class="cstat-no" title="statement not covered" >                return res.redirect('/session/login');</span>
+            }
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            bcrypt.compare(password,businessManagerFounded.encryptedPassword, <span class="fstat-no" title="function not covered" >function passwordsMatch(err, valid) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (err)</span>
+<span class="cstat-no" title="statement not covered" >                    return next(err);</span>
+<span class="cstat-no" title="statement not covered" >                if (!valid) {</span>
+                    
+<span class="cstat-no" title="statement not covered" >                    req.session.flash = {</span>
+                        err: 'La contraseña no coincide'
+                    }
+<span class="cstat-no" title="statement not covered" >                    return res.redirect('/session/login');</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if(req.session.admin!=null || req.session.admin!=undefined){</span>
+<span class="cstat-no" title="statement not covered" >                    req.session.admin=null;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                req.session.businessManager = businessManagerFounded;</span>
+<span class="cstat-no" title="statement not covered" >                req.session.authenticated= true;</span>
+<span class="cstat-no" title="statement not covered" >                return res.redirect('/businessManager/show/'+businessManagerFounded.id);</span>
+&nbsp;
+&nbsp;
+            });
+        });
+    },
+    /*Elimina la sesión de los administradores
+     */
+    destroy: <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >       req.session.destroy();</span>
+<span class="cstat-no" title="statement not covered" >        res.redirect('session/login');</span>
+&nbsp;
+    },
+    /*Retorna a la vista de restablecimiento de la contraseña 
+     *para los administradores, en la cual ingresan el email
+     */ 
+    forgetpassword:<span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >        return res.view({});</span>
+    }
+&nbsp;
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 26 2015 20:46:40 GMT-0500 (COT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

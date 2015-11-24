@@ -1,0 +1,46 @@
+<div class="container">
+	<!-- Page Layout here -->
+	<div class="row">
+		
+		<% if(flash && flash.err) { %>
+		
+		<% var m=JSON.stringify(flash.err) %>
+		<input type="hidden" id="message" value="<%=m%>">
+		
+		<% } %>
+				<input id="" name="user" type="hidden" class="validate" value="<%=session.user.id%>">
+		
+		
+		<h5 class="">Agregar venta</h5>
+		<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/sale/create">
+			
+			<div class="input-field col s12  ">
+				<input id="name" name="name" type="text" class="validate" required>
+				<label for="name">Elemento(s) a vender</label>
+			</div>
+			<div class="input-field col s12  ">
+				<input id="price" name="price" type="number" class="validate" >
+				<label for="price">Precio</label>
+			</div>
+			<div class="input-field col s12  ">
+				<textarea id="textarea1" class="materialize-textarea" name="description" length="120"></textarea>
+            <label for="textarea1">Descripción</label>				
+			</div>
+			
+			<div class="input-field col s12  ">
+				<select name="category">
+					<%_.each(categories, function(category) { %>
+					<option value="<%=category.id%>"><%=category.name%></option>
+					<%});%>
+				</select>
+				<label>Category</label>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<button  type="submit" name="submit" class="btn waves-effect waves-light right red darken-2" >Guardar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

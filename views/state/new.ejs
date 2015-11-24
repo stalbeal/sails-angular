@@ -1,0 +1,39 @@
+<div class="row">
+	
+	<p class="heading h1">Ingresar Departamento</p>
+	<!-- <div class="status alert alert-success" ></div>-->
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/state/create">
+
+	<div class="row">
+			<div class="input-field col s8 offset-s2">
+				
+				<select name="country"  >
+					<% _.each(countries, function(country) { %>
+					<option  value="<%=country.id%>"><%=country.name%></option>
+					<%});%>
+				</select>
+				<label  >País</label>
+			</div>			
+		</div>
+
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="name" type="text" name="name" class="validate" required>
+				<label for="name">Nombre</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s10">
+				<button  type="submit" name="submit" class="btn waves-effect waves-light right blue" >Guardar</button>
+			</div>
+		</div>
+	</form>
+	
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+	<p class="heading h1">Editar Ciudad</p>
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/city/update/<%=city.id%>">
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="name" value="<%=city.name%>" name="name" type="text" class="validate" required>
+				<label class="active" for="name">Nombre</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="latitude" value="<%=city.latitude%>" name="latitude" type="text" class="validate" required>
+				<label class="active"for="latitude">Latitud</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="longitude" value="<%=city.longitude%>" name="longitude" type="text" class="validate" required>
+				<label class="active"for="latitude">Longitud</label>
+			</div>
+		</div>	
+		
+		
+		<div class="row">
+			<div class="input-field col s10">
+				<button  type="submit" name="submit" class="btn waves-effect waves-light right green" >Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,6 @@
+/* generic table styling */
+	
+	/* filter-table specific styling */
+	td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+	/* special filter field styling for this example */
+	.input-filter-container { position: fixed; top: 1em; right: 1em; border: 2px solid #66f; background-color: #eef; padding: 0.5em; }

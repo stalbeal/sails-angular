@@ -1,0 +1,65 @@
+<div class="row">
+	<p class="heading h1">Información para envío de emails</p>
+	
+	
+	<div class="card-panel teal col s10 offset-s1  blue  lighten-5">
+		
+		
+		
+			<div class="col s9 offset-s1">
+				<div class="row">
+					<div class="col s8 col s6">
+					<br>
+					
+						<i class="material-icons prefix ">email</i>
+						<label class="" for="password">Email</label>
+						<p class=""><%=email.emailFrom%></p>
+					</div>
+					
+				</div>
+				
+				
+				
+				
+				<legend >Contenido </legend>
+				<div class="divider red darken-2"></div>
+				<div class="section">
+				
+				<div class="row">
+					<div class="col s8 ">
+
+					<i class="material-icons prefix ">person_pin</i>
+					<label class="" for="from">De</label>
+						<p class=""><%=email.from%></p>
+						
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col s8 ">
+					 <i class="material-icons prefix ">subject</i>
+					 	<label class="" for="subject">Asunto</label>
+						<p class=""><%=email.subject%></p>
+						
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col s10 ">
+					<i class="material-icons prefix">message</i>
+					<label for="body" class="">Contenido</label>
+						<p class=""><%=email.body%></p>
+						
+						
+					</div>
+				</div>
+				<div class="row">
+				<a href="/email/edit/" class="btn waves-effect waves-light right red darken-2"><i class="material-icons left">edit</i>Editar</a>
+				</div>
+
+				</div><!--end section-->
+				</div>
+			
+		
+	</div>
+	</div>

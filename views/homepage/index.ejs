@@ -1,0 +1,48 @@
+
+<div class="row">
+	<p class="heading h1">Registros Landing</p>
+	<div class="col-sm-12" style="overflow: auto;  ">
+		<row>
+		<div class="input-field col s4 right">
+			
+			
+			<input type="search" class="form-control" id="input-filter" size="10" >
+			<label for="input-filter">Buscar:</label>
+		</div>
+		</row>
+		<table id="table"   class="hoverable centered" >
+			<thead >
+				<th width="40%">Nombre</th>
+				<th width="40%">email</th>
+				
+				<!--<th>Sitio</th>
+				
+				<th width="20%" colspan="2" class="text-center">Acciones</th>-->
+			</thead>
+		</table>
+	</div>
+	<div class="col-sm-12" style="overflow: auto; height: 500px;">
+		<table id="table"  class="bordered hoverable " >
+			<%var m=0%>
+			<% _.each(contacts, function(contact) { %>
+			<tr>
+				<%m++%>
+				<td width="40%"><%=contact.name%></td>
+				<td width="40%"><%=contact.email%></td>
+				
+				<!--<td width="20%" colspan="4">
+					<center>
+					
+					<a class="open-modal tooltipped" data-tooltip="Eliminar(Toda la información relacionada a ésta se eliminará también)"  href="/city/destroy/<city.id%>" style="text-decoration: none; color: red;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+					 <input class="appide"  id="input" type="hidden" value="<city.name%>" />
+					<input class="appid"  id="input" type="hidden" value="<city.id%>" /></a> 
+					
+					</center>
+				</td>
+				-->
+			</tr>
+			
+			<%})%>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,116 @@
+
+<style>
+	/* generic table styling */
+	
+	/* filter-table specific styling */
+	td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+	/* special filter field styling for this example */
+	.input-filter-container { position: fixed; top: 1em; right: 1em; border: 2px solid #66f; background-color: #eef; padding: 0.5em; }
+</style>
+<script>
+$(document).ready(function() {
+	$('table').filterTable({ // apply filterTable to all tables on this page
+	inputSelector: '#input-filter' 
+	});
+	$(".open-modal").click(function() {
+	$("#siteModal").modal('show');
+	});
+
+	 $("table a").click(function() { //click anywhere in a row
+	        //alert($(this).find(".appide").val());
+	        //var strCat = $(this).find(".appide").val();
+	        //alert(strCar);
+	        //var aux=$(this).find(".appide").val();
+	        //console.log("culo "+aux[0]);
+    		$('#namestate').val($(this).find(".appide").val());
+    		$('#idstate').val($(this).find(".appid").val());
+
+	    });
+	
+});
+</script>
+
+<!-- Inicio Modal Administrador -->
+<div id="siteModal" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h3 class="modal-title">Aviso</h3>
+</div>
+<div class="modal-body">
+<div class="container">
+	<div class="row">
+	<div class="col-md-8 ">
+		
+			<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/state/destroy">
+			<p>¿Esta seguro que desea eliminar el departamento de <input type="text" id="namestate" style="border: 0px; resize: true; background-color:white;" disabled/></p>
+			<strong><p>Todos las ciudades asociados a este departamento serán eliminados.</p></strong>
+			<input id="idstate" name="idstate" type="hidden"/>
+		</div>
+	</div>
+</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+			<input type="submit" name="submit" class="btn btn-danger pull-right" value="Aceptar">
+		</form>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--fin modal-->
+
+	<div class="row clearfix">
+		<div class="col-md-10 col-md-offset-1">
+			
+			
+			<legend >Departamentos</legend>
+
+			<div class="col-sm-12" style="overflow: auto;  ">
+			<row>
+			<div class="col-md-4 col-md-offset-8">
+				
+				<label for="input-filter">Buscar:</label>
+				<input type="search" class="form-control" id="input-filter" size="10" placeholder="search">
+			</div>
+			</row>
+
+				<table id="table"   class="table table-striped" >
+
+					<thead >
+					<th width="20%">Nombre</th>
+					<!--<th width="20%">Descripción</th>
+					<th>Sitio</th>-->
+						
+					<th width="20%" colspan="2" class="text-center">Acciones</th>
+					</thead>
+					</table>
+				</div>
+
+				<div class="col-sm-12" style="overflow: auto; height: 500px;">
+				<table id="table"  class="table table-striped" >
+				<%var m=0%>
+				<% _.each(states, function(state) { %>
+					<tr>
+					<%m++%>
+						<td width="20%"><%=state.name%></td>
+						<!-- <td width="20%"><%=state.description%></td> -->
+						
+						<td width="20%" colspan="4">
+							<center><a href="/state/show/<%=state.id%>" style="text-decoration: none; color: blue;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+						
+							<a href="/state/edit/<%=state.id%>" style="text-decoration: none; color: green;"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+							<a class="open-modal" href="#" style="text-decoration: none; color: red;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span><input class="appide"  id="input" type="hidden" value="<%=state.name%>" />
+							<input class="appid"  id="input" type="hidden" value="<%=state.id%>" /></a>
+						
+							</center>
+						</td>
+					</tr>
+					
+					<%});%>
+				</table>
+			</div>
+			
+		</div>
+	</div>

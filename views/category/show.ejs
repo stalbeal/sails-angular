@@ -1,0 +1,80 @@
+<!-- <div class="status alert alert-success" ></div>-->
+<% if(flash && flash.err) { %>
+<% var m=JSON.stringify(flash.err) %>
+<input type="hidden" id="message" value="<%=m%>">
+<% } %>
+<div class="row">
+	<div class="col s12 m4 l3 btn-group-vertical center " >
+		<br>
+		<%if(category.image!=null){%>
+		<img class="circle responsive-img materialboxed " width="200" src="data:image/png;base64,<%=category.image%>">
+		<%}else{%>
+		<img class="circle responsive-img materialboxed " width="200" src="/images/icon/image.png">
+		<%}%>
+		<p class="heading h3 center">Acciones</p>
+		<a class="btn waves-effect waves-light red darken-2 modal-trigger" href="#modal"><i class="material-icons left">perm_media</i>Cambiar imagen</a>
+		<a href="/category/index" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">view_list</i>Ver todos</a>
+		
+		<a href="/category/edit/<%=category.id%>" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">edit</i>Editar</a>
+		<a href="/category/destroy/<%=category.id%>" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">delete</i>Eliminar</a>
+	</div>
+	<div class="col s12 m8 l8 offset-l1" >
+		<div class="row">
+			<p class="heading h1 center">Categoría</p>
+		</div>
+		
+		
+		<div class="">
+			<label class="lead" >Nombre</label>
+			<p class="lead"><%=category.name%></p>
+		</div>
+		
+		
+		<div class="">
+			<label class="lead" >Descripción</label>
+			
+			<p class="lead"><%=category.description%></p>
+		</div>
+		
+		
+		
+		
+		
+	</div>
+</div>
+<br>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#target").click(function() {
+		$('input:submit').attr('disabled',true);
+	});
+	$('input:file').change(
+function(){
+if ($(this).val()) {
+$('input:submit').attr('disabled',false);
+}
+});
+});
+</script>
+<!-- Modal Alerta -->
+<div id="modal" class="modal col s6 " style="height: 300px;">
+	<form id="main-contact-form" enctype="multipart/form-data"  class="input-field row" name="contact-form" method="post" action="/category/upload/<%=category.id%>">
+		<div class="row" >
+			<p class="heading h2 blue-text center">Cambiar Imagen</p>
+			<div class="col s4 offset-s1" >
+				<input id="image" type="file" name="image" class="image input-field" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s4 offset-s1 " >
+				<button id="target" type="submit" name="submit" class="btn waves-effect waves-light right red darken-2" >Enviar</button>
+				<a href="#!" class=" modal-action right modal-close btn waves-effect waves-light right grey">Cancelar</a>
+				
+			</div>
+		</div>
+	</div>
+</form>
+
+</div>
+
+<!--fin modal-->

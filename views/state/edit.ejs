@@ -1,0 +1,67 @@
+<div class="row clearfix">
+	<div class="col-md-9 col-md-offset-2">
+		
+		<div class="contact-form">
+			<legend >Editar Departamento</legend>
+			<!-- <div class="status alert alert-success" ></div>-->
+			
+			<% if(flash && flash.err) { %>
+			<% var m=JSON.stringify(flash.err) %>
+			<input type="hidden" id="message" value="<%=m%>">
+			<% } %>
+			
+			<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/state/update">
+				
+				<div class="row">
+					
+					<div class="col-xs-1">
+						<label  >Nombre</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-10">
+						<input type="text" name="name" class="form-control" required="required" value="<%=state.name%>">
+					</div>
+				</div>
+				
+				<!-- <div class="row">
+					<div class="col-xs-4">
+						<label >Descripción</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-10">
+						<textarea type="text" name="description" class="form-control"  rows="8"><%=state.description%></textarea>
+					</div>
+				</div> -->
+				
+				
+				<div class="row">
+					<div class="form-group col-xs-10">
+						<input type="submit" name="submit" class="btn btn-primary pull-right" value="Guardar">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="modalError" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title title">Error</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-11">
+						<div id="errorMessage">
+							
+						</div>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

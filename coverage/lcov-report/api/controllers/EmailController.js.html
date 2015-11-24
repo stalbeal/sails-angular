@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/controllers/EmailController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">api/controllers/EmailController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">2.78% <small>(1 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.94% <small>(1 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">api/controllers/</a> &#187; EmailController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EmailController
+ *
+ * @description :: Server-side logic for managing emails
+ * @help        :: See http://links.sailsjs.org/docs/controllers
+ */
+&nbsp;
+module.exports = {
+	new: <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >		res.view();</span>
+			
+	},
+	/*Acualiza la información relacionada con la información de envio de correos
+	 */
+	update: <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >		Email.find(<span class="fstat-no" title="function not covered" >function emailFounded (err, emails) {</span></span>
+			
+<span class="cstat-no" title="statement not covered" >			if(emails[0]!=null){</span>
+				//Modifica el registro en caso de que exista
+<span class="cstat-no" title="statement not covered" >				var emailExist=emails[0];</span>
+<span class="cstat-no" title="statement not covered" >				var emailNew={</span>
+					emailFrom:req.param('emailFrom'),
+					password:req.param('password'), 
+					subject:req.param('subject'), 
+					from:req.param('from'), 
+					body:req.param('body')
+				}
+<span class="cstat-no" title="statement not covered" >				Email.update(emailExist.id, emailNew, <span class="fstat-no" title="function not covered" >function emailUpdated (err, email) {</span></span>
+<span class="cstat-no" title="statement not covered" >					if(err){</span>
+<span class="cstat-no" title="statement not covered" >						req.session.flash = {</span>
+		                    err:  sails.errorMessage(err)
+		                }
+<span class="cstat-no" title="statement not covered" >		                return res.redirect('/email/edit');</span>
+					}
+<span class="cstat-no" title="statement not covered" >					return res.redirect('/email/show/'+emailExist.id);</span>
+&nbsp;
+				});
+			}else{
+				//Crea un nuevo registro en caso de que no exista
+<span class="cstat-no" title="statement not covered" >				var emailNew={</span>
+					emailFrom:req.param('emailFrom'),
+					password:req.param('password'), 
+					subject:req.param('subject'), 
+					from:req.param('from'), 
+					body:req.param('body')
+				}
+<span class="cstat-no" title="statement not covered" >				Email.create(emailNew, <span class="fstat-no" title="function not covered" >function emailCreated (err, email) {</span></span>
+<span class="cstat-no" title="statement not covered" >					if(err){</span>
+<span class="cstat-no" title="statement not covered" >						req.session.flash = {</span>
+		                    err:  sails.errorMessage(err)
+		                }
+<span class="cstat-no" title="statement not covered" >		                return res.redirect('/email/new');</span>
+					}
+<span class="cstat-no" title="statement not covered" >					var result=email;</span>
+<span class="cstat-no" title="statement not covered" >					return res.redirect('/email/show/'+result.id);</span>
+&nbsp;
+				});
+			}
+		});
+&nbsp;
+	}, 
+	/*Envia la información relacionada con la información de envio de correos
+	 * a la vista edit
+	 */
+	edit:<span class="fstat-no" title="function not covered" >function  (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >		Email.find( <span class="fstat-no" title="function not covered" >function emailFounded (err, email) {</span></span>
+<span class="cstat-no" title="statement not covered" >			if(err){<span class="cstat-no" title="statement not covered" >return next(err);}</span></span>
+<span class="cstat-no" title="statement not covered" >			if(email[0]!=null){</span>
+<span class="cstat-no" title="statement not covered" >				var em=email[0];</span>
+<span class="cstat-no" title="statement not covered" >			return res.view({</span>
+				email:em
+			});
+		}else{
+<span class="cstat-no" title="statement not covered" >			res.redirect('/email/new');</span>
+		}
+		});
+	
+	}, 
+	/*Envia la información relacionada con la información de envio de correos
+	 * a la vista show
+	 */
+	 show:<span class="fstat-no" title="function not covered" >function  (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >		Email.find( <span class="fstat-no" title="function not covered" >function emailFounded (err, email) {</span></span>
+<span class="cstat-no" title="statement not covered" >			if(err){<span class="cstat-no" title="statement not covered" >return next(err);}</span></span>
+<span class="cstat-no" title="statement not covered" >			if(email[0]!=null){</span>
+<span class="cstat-no" title="statement not covered" >				var em=email[0];</span>
+			
+<span class="cstat-no" title="statement not covered" >			if(em!=undefined){</span>
+<span class="cstat-no" title="statement not covered" >                 return res.view({</span>
+				email:em
+			});
+            }else{
+<span class="cstat-no" title="statement not covered" >                var err = new Error();</span>
+<span class="cstat-no" title="statement not covered" >                  err.status = 404;</span>
+                  
+<span class="cstat-no" title="statement not covered" >                return next(err);</span>
+            }
+		}else{
+<span class="cstat-no" title="statement not covered" >			res.redirect('/email/new');</span>
+		}
+		});
+	}
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 26 2015 20:46:40 GMT-0500 (COT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

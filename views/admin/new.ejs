@@ -1,0 +1,55 @@
+<div class="row">
+	<p class="heading h1">Ingresar Administrador</p>
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/admin/create">
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="fullName" name="fullName" type="text" class="validate" required>
+				<label for="fullName">Nombre Completo</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="mobile" name="mobile" type="number" class="validate" required>
+				<label for="mobile">Celular</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="email" name="email" type="email" class="validate" required>
+				<label for="email">Correo electrónico</label>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="username" name="username" type="text" class="validate" required>
+				<label for="username">Nombre de usuario</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="password" name="password" type="password" class="validate" required>
+				<label for="password">Contraseña	</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="passwordConfirmation" name="passwordConfirmation" type="password" class="validate" required>
+				<label for="passwordConfirmation">Confirmación de contraseña</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s10">
+				<button  type="submit" name="submit" class="btn waves-effect waves-light right  red darken-2" >Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>

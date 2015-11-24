@@ -1,0 +1,37 @@
+<div class="row">
+	<p class="heading h1">Editar Administrador</p>
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/admin/update/<%=admin.id%>">
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="fullName" name="fullName" type="text" class="validate" required value="<%=admin.fullName%>">
+				<label for="fullName">Nombre Completo</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="mobile" name="mobile" type="number" class="validate" required value="<%=admin.mobile%>">
+				<label for="mobile">Celular</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="email" name="email" type="email" class="validate" required value="<%=admin.email%>">
+				<label for="email">Correo electrónico</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s10">
+				<button  type="submit" name="submit" class="btn waves-effect waves-light right  red darken-2" >Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>

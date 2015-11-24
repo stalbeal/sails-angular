@@ -1,0 +1,51 @@
+<div class="row">
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<div class="row">
+	<div class="col s12 m4 l3 btn-group-vertical " >
+		<p class="heading h3 center">Acciones</p>
+		<a href="/user/index" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">view_list</i>Ver todos</a>
+		
+		<a href="/user/edit/<%=user.id%>" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">edit</i>Editar</a>
+		<a href="/user/destroy/<%=user.id%>" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">delete</i>Eliminar</a>
+	</div>
+	<div class="col s12 m8 l8 offset-l1" >
+	<p class="heading h1 center">Usuario</p>
+			<div class="">
+				<label class="lead">Nombre</label>
+				
+				<p class="lead"><%=user.fullName%></p>
+			</div>
+			
+			<div class="">
+				<label class="lead">Email</label>
+				
+				<p class="lead"><%=user.email%></p>
+			</div>
+			
+			<div class="">
+				<label class="lead">Username</label>
+				<p class="lead"><%=user.username%></p>
+			</div>
+
+			<div class="">
+				<label class="lead">Celular</label>
+				<p class="lead"><%=user.mobile%></p>
+				
+			</div>
+			
+			
+			<div class="">
+				<label class="lead">Dirección</label>
+				<p class="lead"><%=user.address%></p>
+			</div>
+			
+			
+			
+		</div>
+	</div>
+</div>

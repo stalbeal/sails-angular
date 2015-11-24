@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>habitApp</title>
+        <meta name="theme-color" content="#2196F3">
+        <meta property="og:image"
+        content="http://www.helpet.com.co/images/images/portada.png" />
+        <meta property="og:description" content="" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="canonical" href="http://www.helpet.com.co" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        
+        
+        <!-- Viewport mobile tag for sensible mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        
+        <!--STYLES-->
+        <link rel="stylesheet" href="/styles/angular-toastr.css">
+        <link rel="stylesheet" href="/styles/angular-toastr.min.css">
+        <link rel="stylesheet" href="/styles/divider.css">
+        <link rel="stylesheet" href="/styles/filtertable.css">
+        <link rel="stylesheet" href="/styles/importer.css">
+        <link rel="stylesheet" href="/styles/materialize.css">
+        <link rel="stylesheet" href="/styles/materialize.min.css">
+        <!--STYLES END-->
+    </head>
+    
+    <body >
+        
+        <div class="red lighten-1">
+            <div class="navbar-fixed  red lighten-1">
+                
+                <nav>
+                    <div class="nav-wrapper  red lighten-1">
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <!--<img width="50" src="/images/icon.png" class="responsive-img" >-->
+                        <a href="#" class="myFont left " ><h4>
+                        &nbsp; &nbsp;  habitApp</h4></a>
+                        
+                        
+                        <%if(session.user!=null){%>
+                        <ul id="nav-mobile" class="right hide-on-small-only">
+                            <li>
+                                <img width="80" src="/images/icon.png" class="circle">
+                                <a href="/sale/new" class="myFont right " title=""><h4>
+                                Registrar una venta</h4></a>
+                            </li>
+                            
+                           
+                            <li>
+                                
+                                <a href="/login/destroy" class="myFont right " title="Cerrar sesión"><h4>
+                                    Cerrar sesión</h4>
+                                </a>
+                            </li>
+                        </ul>
+                        <%}else{%>
+                        <ul id="nav-mobile" class="right hide-on-small-only">
+                            
+                            
+                            <li>
+                                <a href="/login/session" class="myFont right " title="Iniciar sesión"><h4>
+                                    Iniciar sesión</h4>
+                                </a>
+                            </li>
+                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                            <!--menu acount-->
+                            <ul class="right ">
+                                <!-- <li><a class="dropdown-button hide-on-small-only" href="#!" data-activates="acount"><b><session.admin.fullName%></b></a></li>
+                                <ul id="acount" class="dropdown-content">
+                                    <li><a href="/admin/show/<session.admin.id%>">Cuenta</a></li>
+                                    <li><a href="/session/destroy/">Salir</a></li>
+                                    -->
+                                </ul>
+                                <li><p>&nbsp;</p></li>
+                                <!--menu acount-->
+                                <!--Barra lateral-->
+                                <ul id="slide-out" class="side-nav hoverable  fixed grey lighten-5">
+                                    <li class="red lighten-1">
+                                        
+                                        <!--  <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+                                        <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a>-->
+                                        <a href="" title="" class="myFont white-text">habitApp</a>
+                                    </li>
+                                    
+                                    <li class="no-padding ">
+                                        <ul class="collapsible " >
+                                            <li>
+                                                <a class="collapsible-header ">Administradores</a>
+                                                <div class="collapsible-body">
+                                                    <ul>
+                                                        <li><a href="/admin/new">Nuevo</a></li>
+                                                        <li><a href="/admin/">Todos</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="no-padding ">
+                                        <ul class="collapsible " >
+                                            <li>
+                                                <a class="collapsible-header ">Usuarios</a>
+                                                <div class="collapsible-body">
+                                                    <ul>
+                                                        <li><a href="/user/new">Nuevo</a></li>
+                                                        <li><a href="/user/">Todos</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="no-padding">
+                                        <ul class="collapsible ">
+                                            <li>
+                                                <a class="collapsible-header">Departamentos</a>
+                                                <div class="collapsible-body">
+                                                    <ul>
+                                                        <li><a href="/state/new">Nuevo</a></li>
+                                                        <li><a href="/state/">Todos</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="no-padding">
+                                        <ul class="collapsible ">
+                                            <li>
+                                                <a class="collapsible-header">Ciudades</a>
+                                                <div class="collapsible-body">
+                                                    <ul>
+                                                        <li><a href="/city/new">Nueva</a></li>
+                                                        <li><a href="/city/">Todas</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="no-padding ">
+                                        <ul class="collapsible " >
+                                            <li>
+                                                <a class="collapsible-header ">Universidades</a>
+                                                <div class="collapsible-body">
+                                                    <ul>
+                                                        <li><a href="/establishment/new">Nuevo</a></li>
+                                                        <li><a href="/establishment/">Todos</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                     <li class="no-padding">
+                                        <ul class="collapsible ">
+                                            <li>
+                                                <a href="#" class="collapsible-header">Categorías</a>
+                                                <div class="collapsible-body">
+                                                    <ul>
+                                                        <li><a href="/category/new">Nueva</a></li>
+                                                        <li><a href="/category/">Ver todas</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li> 
+                                    
+                                    
+                                    
+                                    <li><a href="#">Salir</a></li>
+                                </ul>
+                                <!--menu responsive-->
+                                <ul class="side-nav" id="mobile-demo">
+                                    <li class="red lighten-1">
+                                        
+                                        <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+                                        <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a></li>
+                                        <li><a class="dropdown-button" href="#!" data-activates="admin2">Administradores<i class="material-icons right">arrow_drop_down</i></a></li>
+                                        <ul id="admin2" class="dropdown-content">
+                                            <li><a href="/admin/new">Nuevo</a></li>
+                                            <li><a href="/admin/">Todos</a></li>
+                                        </ul>
+                                        <li><a class="dropdown-button" href="#!" data-activates="ubication2">Ubicación<i class="material-icons right">arrow_drop_down</i></a></li>
+                                        <ul id="ubication2" class="dropdown-content">
+                                            <li><p class="lead"> Departamento</p></li>
+                                            <li><a href="/state/new">Nuevo</a></li>
+                                            <li><a href="/state/">Todos</a></li>
+                                            <li class="divider"></li>
+                                            <li><p class="lead">Ciudad</p></li>
+                                            <li><a href="/city/new">Nueva</a></li>
+                                            <li><a href="/city/">Todas</a></li>
+                                        </ul>
+                                        <!--   <li><a class="dropdown-button" href="#!" data-activates="category2">Categorías<i class="material-icons right">arrow_drop_down</i></a></li>
+                                        <ul id="category2" class="dropdown-content">
+                                            <li><a href="/category/new">Nueva</a></li>
+                                            <li><a href="/category/">Ver todas</a></li>
+                                            
+                                        </ul>
+                                        
+                                        
+                                        <li><a class="dropdown-button" href="#!" data-activates="settings"><i class="material-icons left">perm_identity</i><b><session.admin.fullName%></b></a></li>
+                                        <ul id="settings" class="dropdown-content">
+                                            <li><a href="/admin/show/session.admin.id%>">Cuenta</a></li>
+                                            <li><a href="/session/destroy/">Salir</a></li>
+                                            
+                                        </ul>-->
+                                        <li><p>&nbsp;</p></li>
+                                    </ul>
+                                    
+                                    
+                                    <%}%>
+                                    <!--menu responsive-->
+                                    <ul class="side-nav" id="mobile-demo">
+                                        <li class="">
+                                            ">
+                                            <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+                                            <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="#" class="myFont  " title="Iniciar sesión"><h4>
+                                                Iniciar sesión</h4>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                            </nav>
+                            <br><br> <br>
+                            
+                            
+                            </div><!--end nav-->
+                            <br>
+                            
+                            
+                            
+                            <div class="red lighten-1" style="height:230px; ">
+                                <div class="row">
+                                    <div class="container">
+                                        <div class="col s12 m4 l1">
+                                            <p></p>
+                                        </div>
+                                        <div class="col s12 m8 l11 offset-l2">
+                                            <div class="card ">
+                                                <div class="card-content ">
+                                                  <%- body %>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <!-- Modal Alerta -->
+                                <div id="modalAlert" class="modal bottom-sheet" style="overflow: auto; height: 150px;">
+                                    <div id="errorMessage" class="modal-content" style="overflow: auto; height: 150px;">
+                                        
+                                        <a href="#!" class=" modal-action right modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                    </div>
+                                    
+                                </div>
+                                
+                                
+                                
+                                <!--TEMPLATES-->
+                                
+                                <!--TEMPLATES END-->
+                                
+                                
+                                <!--SCRIPTS-->
+                                <script src="/js/dependencies/sails.io.js"></script>
+                                <script src="/js/dependencies/angular/angular.1.3.js"></script>
+                                <script src="/js/dependencies/angular/angular-toastr.tpls.js"></script>
+                                <script src="/js/dependencies/jquery-1.11.1.min.js"></script>
+                                <script src="/js/dependencies/jquery.filtertable.js"></script>
+                                <script src="/js/dependencies/jquery.filtertable.min.js"></script>
+                                <script src="/js/angular/user/UserModule.js"></script>
+                                <script src="/js/angular/user/UserController.js"></script>
+                                <script src="/js/angular/user/UserService.js"></script>
+                                <script src="/js/angular/services/errorHandler.js"></script>
+                                <script src="/js/angular/user/directives/formSingUp.js"></script>
+                                <script src="/js/scripts/errorMessage.js"></script>
+                                <script src="/js/scripts/filtertable.js"></script>
+                                <script src="/js/scripts/init.js"></script>
+                                <script src="/js/scripts/materialize.js"></script>
+                                <script src="/js/scripts/materialize.min.js"></script>
+                                <script src="/js/scripts/share.js"></script>
+                                <!--SCRIPTS END-->
+                            </body>
+                            
+                        </html>

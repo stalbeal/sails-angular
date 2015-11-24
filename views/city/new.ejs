@@ -1,0 +1,109 @@
+<div class="row">
+	<p class="heading h1">Ingresar Ciudad</p>
+	
+	<% if(flash && flash.err) { %>
+	<% var m=JSON.stringify(flash.err) %>
+	<input type="hidden" id="message" value="<%=m%>">
+	<% } %>
+	
+	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/city/create">
+
+	<div class="row">
+			<div class=" col s8 offset-s2">
+			<label  >Departamento</label>
+				<input type="text" id="state" name="state"  required="required" disabled >
+				
+				<input type="hidden" id="stateId" name="stateId" />
+
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2">
+				<a class="btn waves-effect waves-light red darken-2 modal-trigger" href="#modal">Seleccionar Departamento</a>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="name" name="name" type="text" class="validate" required>
+				<label for="name">Nombre</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="latitude" name="latitude" type="text" class="validate" required>
+				<label for="latitude">Latitud</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2 ">
+				<input id="longitude" name="longitude" type="text" class="validate" required>
+				<label for="longitude">Longitud</label>
+			</div>
+		</div>	
+		
+		
+		<div class="row">
+			<div class="input-field col s10">
+				<button  type="submit" name="submit" class="btn waves-effect waves-light right green" >Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+$("#tablestate a").click(function() { //click anywhere in a row
+//alert($(this).find(".appidstate").val());
+var strstate = $(this).find(".appidstate").val();
+var resstate = strstate.split(";");
+$('#modal').closeModal();
+$('#state').val(resstate[1]);
+$('#stateId').val(resstate[0]);
+});
+});
+</script>
+<!-- Modal Alerta -->
+<div id="modal" class="modal " >
+	
+	<div class="row">
+		<div class="col s12 l10 center">
+		<p class="heading h2">Seleccione una ciudad</p>
+			<div class="col s12 l10 offset-l2 center" >
+				<div class="input-field">
+				<input type="search" id="input-filter"  >
+				<label for="input-filter">Buscar: </label></div>
+				<table id="tablestate"  class="table table-striped" >
+					<thead>
+						<th>Nombre</th>
+						
+						<th>Acción</th>
+					</thead>
+					<tbody>
+						<%var m=0%>
+						<% _.each(states, function(state) { %>
+						<tr>
+							<%m++%>
+							<td ><%=state.name%></td>
+							
+							<td >
+								<a  value="<%=m%>"  >
+									<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+									
+									<input class="appidstate"  id="input<%=m%>" type="hidden" value="<%=state.id%>;<%=state.name%>" />
+									
+								</a>
+								
+							</td>
+						</tr>
+						<%})%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!--fin modal-->

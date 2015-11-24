@@ -1,0 +1,330 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $("#target").click(function() {
+	       
+	        FB.ui({
+	            method: 'feed',
+	            link: 'http://www.helpet.com.co/adoption/',
+	            description: 'Encuentra en helPet reportes de animalitos perdidos y ayuda a los dueños a encontrar a sus mascotas',
+	            caption: 'Visita helPet y encuentra mucho más',
+	            name: '¡Ayuda a estos peluditos a regresar a su hogar!',
+	            picture: 'http://www.helpet.com.co/images/images/adopta.jpg'
+	        }, function(response) {});
+	    });
+	});
+</script>
+
+<div class="row ">
+	<div  class="col s12 m12 l4" >
+		<img src="/images/images/adopta.jpg" class="" width="423px" style=" height:318px; ">
+	</div>
+	<div  class="col s12 m12 l4 hide-on-med-and-down">
+		<img src="/images/images/cuida.jpg" width="423px" style=" height:318px;" >
+		<!-- <img src="/images/landing/fondo.jpg" width="322px" style=" height:159px;" > -->
+	</div>
+	<div  class="col s12 m12 l4 hide-on-med-and-down">
+		<img src="/images/images/comparte.jpg" width="423px" style=" height:318px;">
+		<!-- <img src="/images/landing/fondo.jpg" width="300px" style=" height:159px;"> -->
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m12 l9">
+		<%var m=3;%>
+		<% for(var i=0;i<reports.length;i++){ %>
+			
+			<div class="row">
+				<!--primera columna-->
+				<div class="col s12 m12 l6 " >
+					<div class="card " style=" height:450px; ">
+						<div class="card-image waves-effect waves-block waves-light"  >
+							<%if(reports[i].images!=null){%>
+							
+							
+							<img class=" activator" width="100px" style=" height:350px;"   src="data:image/png;base64,<%=reports[i].images[0]%>">
+							<!-- random image -->
+							<%}else{%>
+							<img class=" activator" style=" height:350px; width=200px;"  src="image/images/nodisponible.png"> <!-- random image -->
+							<%}%>
+						</div>
+						<div class="card-content">
+							<span class="heading h3 activator grey-text text-darken-4">
+								<%if(reports[i].quantity==1){%>
+								Un <%=reports[i].specie.name%> <%=reports[i].race.name%> en adopción
+								<%}else{%>
+								Una camada de <%=reports[i].specie.name%>s <%=reports[i].race.name%> en adopción
+								<%}%>
+								
+								<a ><i class=" material-icons right">more_vert</i></a>
+							</span>
+							<p><a href="/adoption/show/<%=reports[i].id%>">Ver más</a></p>
+						</div>
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">
+								<%if(reports[i].quantity==1){%>
+								Un <%=reports[i].specie.name%> <%=reports[i].race.name%> en adopción.
+								<%}else{%>
+								Una camada de <%=reports[i].specie.name%>s <%=reports[i].race.name%> en adopción.
+								<%}%>
+								
+							<i class="material-icons right">close</i></span>
+							<a href="/adoption/show/<%=reports[i].id%>" target="_blanc"> Ver más la información</a>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Cantidad</label>
+								</div>
+								
+								<div class="col s6 m6 l9">
+									<p> <%=reports[i].quantity%></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Edad(es)</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].age%> meses</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Tamaño</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].size%> </p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Esterilizado(s)</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].sterilized%></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Vacunado(s)</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].vaccines%></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Teléfonos</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].phone%>-<%=reports[i].mobile%></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Email</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].email%></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Ubicación</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].city.name%>, <%=reports[i].state.name%></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6 m6 l3">
+									<label>Más información</label>
+								</div>
+								<div class="col s6 m6 l9">
+									<p>  <%=reports[i].description%></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--final primera columna-->
+				<%if((i+1)<reports.length){%>
+					<!--segunda columna-->
+					<div class="col s12 m12 l6" >
+						<div class="card " style=" height:450px; ">
+							<div class="card-image waves-effect waves-block waves-light">
+								<%if(reports[i+1].images!=null){%>
+								
+								
+								<img class="activator " width="50" style=" height:350px; width=200px;"  src="data:image/png;base64,<%=reports[i+1].images[0]%>">
+								
+								<%}else{%>
+								
+								
+								<img class=" activator" style=" height:350px; width=200px;"  src="images/images/nodisponible.png"> <!-- random image -->
+								
+								<%}%>
+							</div>
+							<div class="card-content">
+								<span class="eading h3 activator grey-text text-darken-4">
+									<%if(reports[i+1].quantity==1){%>
+									Un <%=reports[i+1].specie.name%> <%=reports[i+1].race.name%> en adopción
+									<%}else{%>
+									Una camada de <%=reports[i+1].specie.name%>s <%=reports[i+1].race.name%> en adopción
+									<%}%>
+									<a ><i class=" material-icons right">more_vert</i></a>
+								</span>
+								<p><a href="/adoption/show/<%=reports[i+1].id%>">Ver más</a></p>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">
+									<%if(reports[i+1].quantity==1){%>
+									Un <%=reports[i+1].specie.name%> <%=reports[i+1].race.name%> en adopción.
+									<%}else{%>
+									Una camada de <%=reports[i+1].specie.name%>s <%=reports[i+1].race.name%> en adopción.
+									<%}%>
+									
+								<i class="material-icons right">close</i></span>
+								<a href="/adoption/show/<%=reports[i+1].id%>" target="_blank"> Ver más la información</a>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Cantidad</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].quantity%></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Edad(es)</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].age%> meses</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Tamaño</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].size%> </p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Esterilizado(s)</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].sterilized%></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Vacunado(s)</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].vaccines%></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Teléfonos</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].phone%>-<%=reports[i+1].mobile%></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Email</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].email%></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Ubicación</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].city.name%>, <%=reports[i+1].state.name%></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s6 m6 l3">
+										<label>Más información</label>
+									</div>
+									<div class="col s6 m6 l9">
+										<p>  <%=reports[i+1].description%></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--fin 2da columna-->
+					
+					
+					<%}%>
+					
+				</div><!--fin row-->
+				<%}%>
+			</div><!--fin primera columna-->
+			<div class="col s12 m6 l3 hide-on-med-and-down" style="height:3000px; ">
+				<p>
+					<label>Comparte</label>
+				
+						<!--fb-->
+						<a id="target" class="" title="Comparte en Facebook" href="#"><img width="30"  src="/images/images/Facebook.png">
+						</a>
+						<!--fb-->
+						<!--twt-->
+						<a title="Comparte en Twitter" href="#" onclick="window.open('http://twitter.com/share?text=Encuentra un animalito para adoptar en&url=http://goo.gl/Lf0WLF&via=helpetApp','Comparte en Twitter','width=600,height=400')"><img width="28" src="/images/images/twitter.png">
+						</a>
+						<!--twt-->
+						<!--g+-->
+						<a title="Comparte en Google+" href="https://plus.google.com/share?url=http://goo.gl/Lf0WLF" onclick="javascript:window.open(this.href,
+							'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+							<img width="24"
+							src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/>
+						</a>
+						<!--g+-->
+					</p>
+					<!--tabs-->
+					<div class="">
+						<div class="">
+							<ul class="tabs ">
+                ">
+								<li class="tab col s3"><a class="active" href="#test1">Facebook</a></li>
+								<li class="tab col s3"><a class="" href="#test2">Twitter</a></li>
+							</ul>
+						</div>
+						<div id="test1" class="">
+							<div class=" fb-page" data-href="https://www.facebook.com/apphelpet" data-width="305" data-height="3000" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+								<div class="fb-xfbml-parse-ignore">
+									<blockquote cite="https://www.facebook.com/apphelpet">
+										<a href="https://www.facebook.com/apphelpet">HelPet</a></blockquote>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="test2" class="col s12">
+							<a class="twitter-timeline"   width="330"
+								height="2000" href="https://twitter.com/helpetApp" data-widget-id="645316256531357696">Tweets por el @helpetApp.
+							</a>
+						</div>
+						
+						
+						
+						
+						
+						<!--publicidad-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9711134518069834"
+     data-ad-slot="9411914505"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!---->
+					</div>
+				</div>

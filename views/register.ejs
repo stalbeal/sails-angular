@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>habitApp</title>
+        <meta name="theme-color" content="#2196F3">
+        <meta property="og:image"
+        content="http://www.helpet.com.co/images/images/portada.png" />
+        <meta property="og:description" content="Tu mascota es tu mejor amigo y nosotros lo entendemos. ¡Por eso llega helPet, una aplicación diseñada a tu medida! " />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="canonical" href="http://www.helpet.com.co" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        
+        
+        <!-- Viewport mobile tag for sensible mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+       
+        <!--STYLES-->
+        <link rel="stylesheet" href="/styles/angular-toastr.css">
+        <link rel="stylesheet" href="/styles/angular-toastr.min.css">
+        <link rel="stylesheet" href="/styles/divider.css">
+        <link rel="stylesheet" href="/styles/filtertable.css">
+        <link rel="stylesheet" href="/styles/importer.css">
+        <link rel="stylesheet" href="/styles/materialize.css">
+        <link rel="stylesheet" href="/styles/materialize.min.css">
+        <!--STYLES END-->
+    </head>
+    
+    <body style="background-color: #ef5350;">
+        
+        <div class="">
+            <div class="navbar-fixed  red lighten-1">
+                
+                <nav>
+                    <div class="nav-wrapper  red lighten-1">
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <!--<img width="50" src="/images/icon.png" class="responsive-img" >-->
+                        <a href="#" class="myFont left " ><h4>
+                                 &nbsp; &nbsp;  habitApp</h4></a>
+                        
+                        
+                        <%if(session.user!=null){%>
+                        <ul id="nav-mobile" class="right hide-on-small-only">
+                            <li>
+                                <img width="80" src="/images/icon.png" class="circle">
+                                <a href="/adoption/" class="myFont right " title="Ver animales en adopción"><h4>
+                                Adopciones</h4></a>
+                            </li>
+                            <li>
+                                <a href="/adoption/" class="myFont right " title="Ver animales en adopción"><h4>
+                                Adopciones</h4></a>
+                            </li>
+                            <li>
+                                
+                                <a href="https://play.google.com/store/apps/details?id=com.co.helpet" class="myFont right " title="Descargar helPet"><h4>
+                                Descargar</h4></a>
+                            </li>
+                            <li>
+                              
+                                <a href="/session/login" class="myFont right " title="Iniciar sesión"><h4>
+                                    Iniciar sesión</h4>
+                                </a>
+                            </li>
+                        </ul>
+                        <%}else{%>
+                        <ul id="nav-mobile" class="right hide-on-small-only">
+                            
+                           
+                            <li> 
+                                <a href="/session/login" class="myFont right " title="Iniciar sesión"><h4>
+                                    Iniciar sesión</h4>
+                                </a>
+                            </li>
+                        </ul>
+                        <%}%>
+                        <!--menu responsive-->
+                        <ul class="side-nav" id="mobile-demo">
+                            <li class="">
+                ">
+                                <a href="#!"><img width="50" src="/images/icon.png" class="responsive-img" >
+                                <img width="80" src="/images/titlewhite.png" class="responsive-img" ></a>
+                            </li>
+                           
+                            <li>
+                                <a href="#" class="myFont  " title="Iniciar sesión"><h4>
+                                    Iniciar sesión</h4>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+                <br><br> <br>
+                
+                
+                </div><!--end nav-->
+                <br>
+                
+                
+                
+               
+                    <%- body %>
+                    
+                    <!-- Modal Alerta -->
+                    <div id="modalAlert" class="modal bottom-sheet" style="overflow: auto; height: 150px;">
+                        <div id="errorMessage" class="modal-content" style="overflow: auto; height: 150px;">
+                            
+                            <a href="#!" class=" modal-action right modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    
+                    <!--TEMPLATES-->
+                    
+                    <!--TEMPLATES END-->
+                    
+                    
+                    <!--SCRIPTS-->
+                    <script src="/js/dependencies/sails.io.js"></script>
+                    <script src="/js/dependencies/angular/angular.1.3.js"></script>
+                    <script src="/js/dependencies/angular/angular-toastr.tpls.js"></script>
+                    <script src="/js/dependencies/jquery-1.11.1.min.js"></script>
+                    <script src="/js/dependencies/jquery.filtertable.js"></script>
+                    <script src="/js/dependencies/jquery.filtertable.min.js"></script>
+                    <script src="/js/angular/user/UserModule.js"></script>
+                    <script src="/js/angular/user/UserController.js"></script>
+                    <script src="/js/angular/user/UserService.js"></script>
+                    <script src="/js/angular/services/errorHandler.js"></script>
+                    <script src="/js/angular/user/directives/formSingUp.js"></script>
+                    <script src="/js/scripts/errorMessage.js"></script>
+                    <script src="/js/scripts/filtertable.js"></script>
+                    <script src="/js/scripts/init.js"></script>
+                    <script src="/js/scripts/materialize.js"></script>
+                    <script src="/js/scripts/materialize.min.js"></script>
+                    <script src="/js/scripts/share.js"></script>
+                    <!--SCRIPTS END-->
+                </body>
+               
+            </html>
